@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Média de Notas</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+</head>
+
+<body class="container">
+    
+    <h1 class="text-center">Média de Notas</h1>
+    
+    <div id="mensagemView"></div>
+    
+    <form class="form" id="formulario" onsubmit="alunoController.adiciona(event)" >
+        
+        <div class="form-group">
+            <label for="aluno">Aluno</label>
+            <input type="string" id="nome" class="form-control" required autofocus/>        
+        </div>    
+        
+        <div class="form-group">
+            <label for="nota1">Nota do 1° trimestre</label>
+            <input type="number" min="1" step="1" id="nota1" class="form-control" value="0" required/>
+        </div>
+        
+        <div class="form-group">
+            <label for="nota1">Nota do 2° trimestre</label>
+            <input type="number" min="1" step="1" id="nota2" class="form-control" value="0" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="nota1">Nota do 3° trimestre</label>
+            <input type="number" min="1" step="1" id="nota3" class="form-control" value="0" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="nota1">Data</label>
+            <input type="date" id="data" class="form-control" required/>
+        </div>
+        
+        <button class="btn btn-alert" type="submit">Incluir</button>
+    </form>
+
+    <br>
+    <br>
+
+    <div id="tabela"></div>
+
+
+    <script src="js/models/Aluno.js"></script>
+    <script src="js/models/AlunosList.js"></script>
+
+    <script src="js/controllers/AlunoController.js"></script>
+
+    <script src="js/views/AlunoView.js"></script>
+
+    <script src="js/helpers/DateHelper.js"></script>
+
+    <script>
+
+        let alunoController = new AlunoController();
+
+    </script>
+</body>
+</html>
